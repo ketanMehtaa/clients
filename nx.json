@@ -2,9 +2,14 @@
   "cacheDirectory": ".nx/cache",
   "defaultBase": "main",
   "namedInputs": {
-    "default": ["{projectRoot}/**/*"],
-    "production": ["!{projectRoot}/**/*.spec.ts"]
+    "default": [
+      "{projectRoot}/**/*"
+    ],
+    "production": [
+      "!{projectRoot}/**/*.spec.ts"
+    ]
   },
   "parallel": 4,
-  "targetDefaults": {}
+  "targetDefaults": {},
+  "nxCloudId": "684089e55d2e4bd12edc6119"
 }
