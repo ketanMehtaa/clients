@@ -15,7 +15,7 @@
     </bit-select>
   </bit-form-field>
 
-  <bit-form-field class="tw-grow" *ngIf="!disabled">
+  <bit-form-field class="tw-grow tw-p-3" *ngIf="!disabled">
     <bit-label>{{ selectorLabelText }}</bit-label>
     <bit-multi-select
       class="tw-w-full"
@@ -50,7 +50,7 @@
       [formGroupName]="i"
       [ngClass]="{ 'tw-text-muted': item.readonly }"
     >
-      <td bitCell [ngSwitch]="item.type">
+      <td bitCell [ngSwitch]="item.type" class="tw-w-5/12">
         <div class="tw-flex tw-items-center" *ngSwitchCase="itemType.Member">
           <bit-avatar size="small" class="tw-mr-3" text="{{ item.labelName }}"></bit-avatar>
           <div class="tw-flex tw-flex-col">
