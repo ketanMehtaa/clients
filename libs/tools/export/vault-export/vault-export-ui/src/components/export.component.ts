@@ -236,7 +236,9 @@ export class ExportComponent implements OnInit, OnDestroy, AfterViewInit {
             { name: ".zip (with attachments)", value: "zip" },
           ];
         }
-        this.exportForm.get("format").setValue("json");
+
+        if (value !== "myVault" && this.exportForm.get("format").value == "zip")
+          {this.exportForm.get("format").setValue("json");}
       });
 
     merge(
