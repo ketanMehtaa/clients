@@ -157,7 +157,7 @@ const SearchTextDebounceInterval = 200;
 })
 export class VaultComponent<C extends CipherViewLike> implements OnInit, OnDestroy {
   @ViewChild("vaultFilter", { static: true }) filterComponent: VaultFilterComponent;
-  @ViewChild("vaultItems", { static: false }) vaultItemsComponent: VaultItemsComponent; // Add this
+  @ViewChild("vaultItems", { static: false }) vaultItemsComponent: VaultItemsComponent<C>;
 
   trashCleanupWarning: string = null;
   kdfIterations: number;
