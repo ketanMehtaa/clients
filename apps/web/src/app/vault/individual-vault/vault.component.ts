@@ -615,9 +615,6 @@ export class VaultComponent<C extends CipherViewLike> implements OnInit, OnDestr
       }
     } finally {
       this.processingEvent = false;
-      if (["assignToCollections", "delete", "restore", "moveToFolder"].includes(event.type)) {
-        this.vaultItemsComponent?.clearSelection();
-      }
     }
   }
 
@@ -1275,6 +1272,7 @@ export class VaultComponent<C extends CipherViewLike> implements OnInit, OnDestr
 
   private refresh() {
     this.refresh$.next();
+    this.vaultItemsComponent?.clearSelection();
   }
 
   private async go(queryParams: any = null) {

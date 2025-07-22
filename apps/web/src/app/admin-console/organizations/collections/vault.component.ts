@@ -838,17 +838,6 @@ export class VaultComponent implements OnInit, OnDestroy {
       }
     } finally {
       this.processingEvent = false;
-      if (
-        [
-          "assignToCollections",
-          "delete",
-          "restore",
-          "moveToFolder",
-          "bulkEditCollectionAccess",
-        ].includes(event.type)
-      ) {
-        this.vaultItemsComponent?.clearSelection();
-      }
     }
   }
 
@@ -1431,6 +1420,7 @@ export class VaultComponent implements OnInit, OnDestroy {
 
   private refresh() {
     this.refresh$.next();
+    this.vaultItemsComponent?.clearSelection();
   }
 
   private go(queryParams: any = null) {
