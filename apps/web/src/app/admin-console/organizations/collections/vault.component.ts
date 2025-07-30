@@ -29,6 +29,7 @@ import {
 import {
   CollectionAdminService,
   CollectionAdminView,
+  CollectionService,
   CollectionView,
   Unassigned,
 } from "@bitwarden/admin-console/common";
@@ -267,6 +268,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     private accountService: AccountService,
     private billingNotificationService: BillingNotificationService,
     private organizationWarningsService: OrganizationWarningsService,
+    private collectionService: CollectionService,
   ) {}
 
   async ngOnInit() {
@@ -1136,6 +1138,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
     try {
       await this.apiService.deleteCollection(this.organization?.id, collection.id);
+      await this.collectionService.delete([collection.id as CollectionId], this.userId);
       this.toastService.showToast({
         variant: "success",
         title: null,

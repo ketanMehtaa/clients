@@ -14,8 +14,6 @@ export enum FeatureFlag {
   CreateDefaultLocation = "pm-19467-create-default-location",
 
   /* Auth */
-  PM16117_SetInitialPasswordRefactor = "pm-16117-set-initial-password-refactor",
-  PM16117_ChangeExistingPasswordRefactor = "pm-16117-change-existing-password-refactor",
   PM14938_BrowserExtensionLoginApproval = "pm-14938-browser-extension-login-approvals",
 
   /* Autofill */
@@ -34,9 +32,7 @@ export enum FeatureFlag {
   UseOrganizationWarningsService = "use-organization-warnings-service",
   AllowTrialLengthZero = "pm-20322-allow-trial-length-0",
   PM21881_ManagePaymentDetailsOutsideCheckout = "pm-21881-manage-payment-details-outside-checkout",
-
-  /* Data Insights and Reporting */
-  EnableRiskInsightsNotifications = "enable-risk-insights-notifications",
+  PM21821_ProviderPortalTakeover = "pm-21821-provider-portal-takeover",
 
   /* Key Management */
   PrivateKeyRegeneration = "pm-12241-private-key-regeneration",
@@ -48,12 +44,17 @@ export enum FeatureFlag {
 
   /* Tools */
   DesktopSendUIRefresh = "desktop-send-ui-refresh",
+  UseSdkPasswordGenerators = "pm-19976-use-sdk-password-generators",
+
+  /* DIRT */
+  EventBasedOrganizationIntegrations = "event-based-organization-integrations",
 
   /* Vault */
   PM8851_BrowserOnboardingNudge = "pm-8851-browser-onboarding-nudge",
   PM9111ExtensionPersistAddEditForm = "pm-9111-extension-persist-add-edit-form",
   PM19941MigrateCipherDomainToSdk = "pm-19941-migrate-cipher-domain-to-sdk",
   PM22134SdkCipherListView = "pm-22134-sdk-cipher-list-view",
+  PM22136_SdkCipherEncryption = "pm-22136-sdk-cipher-encryption",
   CipherKeyEncryption = "cipher-key-encryption",
   EndUserNotifications = "pm-10609-end-user-notifications",
   RemoveCardItemTypePolicy = "pm-16442-remove-card-item-type-policy",
@@ -88,11 +89,12 @@ export const DefaultFeatureFlagValue = {
   [FeatureFlag.MacOsNativeCredentialSync]: FALSE,
   [FeatureFlag.WindowsDesktopAutotype]: FALSE,
 
-  /* Data Insights and Reporting */
-  [FeatureFlag.EnableRiskInsightsNotifications]: FALSE,
-
   /* Tools */
   [FeatureFlag.DesktopSendUIRefresh]: FALSE,
+  [FeatureFlag.UseSdkPasswordGenerators]: FALSE,
+
+  /* DIRT */
+  [FeatureFlag.EventBasedOrganizationIntegrations]: FALSE,
 
   /* Vault */
   [FeatureFlag.PM8851_BrowserOnboardingNudge]: FALSE,
@@ -103,10 +105,9 @@ export const DefaultFeatureFlagValue = {
   [FeatureFlag.RemoveCardItemTypePolicy]: FALSE,
   [FeatureFlag.PM22134SdkCipherListView]: FALSE,
   [FeatureFlag.PM19315EndUserActivationMvp]: FALSE,
+  [FeatureFlag.PM22136_SdkCipherEncryption]: FALSE,
 
   /* Auth */
-  [FeatureFlag.PM16117_SetInitialPasswordRefactor]: FALSE,
-  [FeatureFlag.PM16117_ChangeExistingPasswordRefactor]: FALSE,
   [FeatureFlag.PM14938_BrowserExtensionLoginApproval]: FALSE,
 
   /* Billing */
@@ -117,6 +118,7 @@ export const DefaultFeatureFlagValue = {
   [FeatureFlag.UseOrganizationWarningsService]: FALSE,
   [FeatureFlag.AllowTrialLengthZero]: FALSE,
   [FeatureFlag.PM21881_ManagePaymentDetailsOutsideCheckout]: FALSE,
+  [FeatureFlag.PM21821_ProviderPortalTakeover]: FALSE,
 
   /* Key Management */
   [FeatureFlag.PrivateKeyRegeneration]: FALSE,
